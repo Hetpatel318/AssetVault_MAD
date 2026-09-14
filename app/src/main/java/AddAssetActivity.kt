@@ -14,14 +14,16 @@ class AddAssetActivity : AppCompatActivity() {
 
         val name = findViewById<EditText>(R.id.edtAssetName)
         val category = findViewById<EditText>(R.id.edtCategory)
+        val brand = findViewById<EditText>(R.id.edtBrand)
         val price = findViewById<EditText>(R.id.edtPrice)
         val date = findViewById<EditText>(R.id.edtPurchaseDate)
         val warranty = findViewById<EditText>(R.id.edtWarranty)
+
         val save = findViewById<Button>(R.id.btnSaveAsset)
 
         save.setOnClickListener {
 
-            if (name.text.toString().isEmpty()) {
+            if (name.text.toString().trim().isEmpty()) {
                 Toast.makeText(this, "Enter asset name", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -31,8 +33,6 @@ class AddAssetActivity : AppCompatActivity() {
                 "Asset saved successfully",
                 Toast.LENGTH_SHORT
             ).show()
-
-            finish()
         }
     }
 }

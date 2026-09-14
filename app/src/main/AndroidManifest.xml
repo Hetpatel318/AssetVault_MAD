@@ -9,11 +9,11 @@
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
 
         <activity
-            android:name="com.example.mad_assignment.AddAssetActivity"
+            android:name=".AddAssetActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.example.mad_assignment.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
 
             <intent-filter>
@@ -22,6 +22,14 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".EntryActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AddAssetActivity" android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="false" />
 
     </application>
 
