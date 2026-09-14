@@ -114,6 +114,13 @@
             android:layout_marginTop="15dp"/>
 
         <Button
+            android:id="@+id/btnMyAssets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Assets"
+            android:layout_marginTop="15dp"/>
+
+        <Button
             android:id="@+id/btnViewAssets"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

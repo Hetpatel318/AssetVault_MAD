@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Asset Details"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1565C0"
+            android:gravity="center"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textSize="18sp"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/txtCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category:"
+            android:textSize="18sp"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/txtBrand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Brand:"
+            android:textSize="18sp"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price:"
+            android:textSize="18sp"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Purchase Date:"
+            android:textSize="18sp"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/txtWarranty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Warranty:"
+            android:textSize="18sp"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="DELETE ASSET"
+            android:layout_marginTop="25dp"/>
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="EDIT ASSET"
+            android:layout_marginTop="12dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

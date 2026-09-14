@@ -15,83 +15,64 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add New Asset"
+            android:text="Edit Asset"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#1565C0"
             android:gravity="center"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enter your asset details"
-            android:textSize="15sp"
-            android:textColor="#666666"
-            android:gravity="center"
-            android:layout_marginBottom="25dp" />
+            android:layout_marginBottom="25dp"/>
 
         <EditText
-            android:id="@+id/edtAssetName"
+            android:id="@+id/edtEditName"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="Asset Name"
-            android:inputType="text"
-            android:padding="12dp" />
+            android:inputType="text"/>
 
         <EditText
-            android:id="@+id/edtCategory"
+            android:id="@+id/edtEditCategory"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="Category"
-            android:inputType="text"
-            android:layout_marginTop="12dp"
-            android:padding="12dp" />
+            android:layout_marginTop="12dp"/>
 
         <EditText
-            android:id="@+id/edtBrand"
+            android:id="@+id/edtEditBrand"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="Brand"
-            android:inputType="text"
-            android:layout_marginTop="12dp"
-            android:padding="12dp" />
+            android:layout_marginTop="12dp"/>
 
         <EditText
-            android:id="@+id/edtPrice"
+            android:id="@+id/edtEditPrice"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="Purchase Price"
             android:inputType="numberDecimal"
-            android:layout_marginTop="12dp"
-            android:padding="12dp" />
+            android:layout_marginTop="12dp"/>
 
         <EditText
-            android:id="@+id/edtPurchaseDate"
+            android:id="@+id/edtEditDate"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="Purchase Date"
-            android:inputType="date"
-            android:layout_marginTop="12dp"
-            android:padding="12dp" />
+            android:layout_marginTop="12dp"/>
 
         <EditText
-            android:id="@+id/edtWarranty"
+            android:id="@+id/edtEditWarranty"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="Warranty Period (Months)"
             android:inputType="number"
-            android:layout_marginTop="12dp"
-            android:padding="12dp" />
+            android:layout_marginTop="12dp"/>
 
         <Button
-            android:id="@+id/btnSaveAsset"
+            android:id="@+id/btnUpdateAsset"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="SAVE ASSET"
-            android:textSize="16sp"
+            android:text="UPDATE ASSET"
             android:textStyle="bold"
-            android:layout_marginTop="25dp" />
+            android:layout_marginTop="25dp"/>
 
     </LinearLayout>
 

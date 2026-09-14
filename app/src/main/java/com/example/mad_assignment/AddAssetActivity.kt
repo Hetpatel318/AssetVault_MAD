@@ -14,17 +14,30 @@ class AddAssetActivity : AppCompatActivity() {
 
         val name = findViewById<EditText>(R.id.edtAssetName)
         val category = findViewById<EditText>(R.id.edtCategory)
+        val brand = findViewById<EditText>(R.id.edtBrand)
         val price = findViewById<EditText>(R.id.edtPrice)
         val date = findViewById<EditText>(R.id.edtPurchaseDate)
         val warranty = findViewById<EditText>(R.id.edtWarranty)
+
         val save = findViewById<Button>(R.id.btnSaveAsset)
+
+        val db = AssetDatabaseHelper(this)
 
         save.setOnClickListener {
 
-            if (name.text.toString().isEmpty()) {
+            if (name.text.toString().trim().isEmpty()) {
                 Toast.makeText(this, "Enter asset name", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
+            db.addAsset(
+                name.text.toString(),
+                category.text.toString(),
+                brand.text.toString(),
+                price.text.toString(),
+                date.text.toString(),
+                warranty.text.toString()
+            )
 
             Toast.makeText(
                 this,
