@@ -1,58 +1,115 @@
 package com.example.mad_assignment
 
-import android.content.Intent
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ListView
+import android.view.Gravity
+import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import org.json.JSONArray
 
 class MyAssetsActivity : AppCompatActivity() {
+
+    private lateinit var assetContainer: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_assets)
 
-        val listView = findViewById<ListView>(R.id.listAssets)
+        assetContainer = findViewById(R.id.assetContainer)
 
-        val db = AssetDatabaseHelper(this)
-        val database = db.readableDatabase
+        showAssets()
+    }
 
-        val cursor = database.rawQuery("SELECT * FROM assets", null)
+    override fun onResume() {
+        super.onResume()
 
-        val assets = ArrayList<String>()
-        val assetIds = ArrayList<Int>()
+        showAssets()
+    }
 
-        while (cursor.moveToNext()) {
+    private fun showAssets() {
 
-            val id = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
-            val name = cursor.getString(cursor.getColumnIndexOrThrow("name"))
-            val category = cursor.getString(cursor.getColumnIndexOrThrow("category"))
-            val brand = cursor.getString(cursor.getColumnIndexOrThrow("brand"))
-            val price = cursor.getString(cursor.getColumnIndexOrThrow("price"))
+        // Remove old displayed data
+        assetContainer.removeAllViews()
 
-            assetIds.add(id)
-            assets.add("$name\n$category | $brand\nPrice: ₹$price")
+        val preferences =
+            getSharedPreferences("AssetVault", MODE_PRIVATE)
+
+        val savedData =
+            preferences.getString("assets", "[]")
+
+        val assets = JSONArray(savedData)
+
+        // If there are no assets
+        if (assets.length() == 0) {
+
+            val emptyText = TextView(this)
+
+            emptyText.text = "No assets added yet."
+            emptyText.textSize = 18f
+            emptyText.gravity = Gravity.CENTER
+            emptyText.setPadding(10, 80, 10, 80)
+
+            assetContainer.addView(emptyText)
+
+            return
         }
 
-        cursor.close()
-        database.close()
+        // Display every asset
+        for (i in 0 until assets.length()) {
 
-        val adapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_list_item_1,
-            assets
-        )
+            val asset = assets.getJSONObject(i)
 
-        listView.adapter = adapter
+            // Card
+            val card = LinearLayout(this)
 
-        listView.setOnItemClickListener { _, _, position, _ ->
+            card.orientation = LinearLayout.VERTICAL
+            card.setPadding(20, 20, 20, 20)
+            card.setBackgroundColor(Color.WHITE)
 
-            val id = assetIds[position]
+            // Asset name
+            val nameText = TextView(this)
 
-            val intent = Intent(this, AssetDetailActivity::class.java)
-            intent.putExtra("id", id)
+            nameText.text =
+                asset.optString("name", "Unknown Asset")
 
-            startActivity(intent)
+            nameText.textSize = 21f
+            nameText.setTextColor(
+                Color.rgb(21, 101, 192)
+            )
+            nameText.setTypeface(
+                null,
+                Typeface.BOLD
+            )
+
+            // Asset details
+            val detailsText = TextView(this)
+
+            detailsText.text =
+                "Category: ${asset.optString("category", "-")}\n" +
+                        "Brand: ${asset.optString("brand", "-")}\n" +
+                        "Price: ${asset.optString("price", "-")}\n" +
+                        "Purchase Date: ${asset.optString("date", "-")}\n" +
+                        "Warranty: ${asset.optString("warranty", "-")} months"
+
+            detailsText.textSize = 16f
+            detailsText.setPadding(0, 10, 0, 0)
+
+            // Add views to card
+            card.addView(nameText)
+            card.addView(detailsText)
+
+            // Card margin
+            val params = LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+
+            params.setMargins(0, 0, 0, 15)
+
+            assetContainer.addView(card, params)
         }
     }
 }

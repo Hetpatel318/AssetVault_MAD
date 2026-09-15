@@ -19,8 +19,7 @@
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#1565C0"
-            android:gravity="center"
-            android:layout_marginBottom="8dp" />
+            android:gravity="center"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -29,7 +28,8 @@
             android:textSize="15sp"
             android:textColor="#666666"
             android:gravity="center"
-            android:layout_marginBottom="25dp" />
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="25dp"/>
 
         <EditText
             android:id="@+id/edtAssetName"
@@ -37,7 +37,7 @@
             android:layout_height="55dp"
             android:hint="Asset Name"
             android:inputType="text"
-            android:padding="12dp" />
+            android:padding="12dp"/>
 
         <EditText
             android:id="@+id/edtCategory"
@@ -46,7 +46,7 @@
             android:hint="Category"
             android:inputType="text"
             android:layout_marginTop="12dp"
-            android:padding="12dp" />
+            android:padding="12dp"/>
 
         <EditText
             android:id="@+id/edtBrand"
@@ -55,7 +55,7 @@
             android:hint="Brand"
             android:inputType="text"
             android:layout_marginTop="12dp"
-            android:padding="12dp" />
+            android:padding="12dp"/>
 
         <EditText
             android:id="@+id/edtPrice"
@@ -64,7 +64,7 @@
             android:hint="Purchase Price"
             android:inputType="numberDecimal"
             android:layout_marginTop="12dp"
-            android:padding="12dp" />
+            android:padding="12dp"/>
 
         <EditText
             android:id="@+id/edtPurchaseDate"
@@ -73,7 +73,7 @@
             android:hint="Purchase Date"
             android:inputType="date"
             android:layout_marginTop="12dp"
-            android:padding="12dp" />
+            android:padding="12dp"/>
 
         <EditText
             android:id="@+id/edtWarranty"
@@ -82,16 +82,15 @@
             android:hint="Warranty Period (Months)"
             android:inputType="number"
             android:layout_marginTop="12dp"
-            android:padding="12dp" />
+            android:padding="12dp"/>
 
         <Button
             android:id="@+id/btnSaveAsset"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:text="SAVE ASSET"
-            android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginTop="25dp" />
+            android:layout_marginTop="25dp"/>
 
     </LinearLayout>
 

@@ -4,11 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.mad_assignment"
-    compileSdk {
-        version = release(37) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.mad_assignment"
@@ -22,9 +18,8 @@ android {
 
     buildTypes {
         release {
-            optimization {
-                enable = false
-            }
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -34,12 +29,12 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.activity.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.activity.ktx)
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }

@@ -3,7 +3,8 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F8F4F8">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,29 +13,30 @@
         android:padding="20dp">
 
         <TextView
-            android:id="@+id/txtTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="AssetVault"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="@color/primary"
+            android:textColor="#1565C0"
             android:layout_marginTop="20dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Your personal asset manager"
-            android:textSize="16sp"
+            android:textSize="15sp"
             android:layout_marginTop="5dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Dashboard"
-            android:textSize="23sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:layout_marginTop="35dp"/>
+
+        <!-- Dashboard Counters -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,14 +44,15 @@
             android:orientation="horizontal"
             android:layout_marginTop="15dp">
 
+            <!-- Total Assets -->
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="110dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
-                android:orientation="vertical"
                 android:gravity="center"
-                android:background="@drawable/card_background"
-                android:padding="10dp">
+                android:orientation="vertical"
+                android:background="#FFFFFF">
 
                 <TextView
                     android:id="@+id/txtTotalAssets"
@@ -62,8 +65,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total Assets"
-                    android:textSize="14sp"/>
+                    android:text="Total Assets"/>
 
             </LinearLayout>
 
@@ -71,17 +73,18 @@
                 android:layout_width="12dp"
                 android:layout_height="1dp"/>
 
+            <!-- Warranty Alerts -->
+
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="110dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
-                android:orientation="vertical"
                 android:gravity="center"
-                android:background="@drawable/card_background"
-                android:padding="10dp">
+                android:orientation="vertical"
+                android:background="#FFFFFF">
 
                 <TextView
-                    android:id="@+id/txtWarranty"
+                    android:id="@+id/txtWarrantyAlerts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -91,46 +94,47 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Warranty Alerts"
-                    android:textSize="14sp"/>
+                    android:text="Warranty Alerts"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
+        <!-- Quick Actions -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Quick Actions"
-            android:textSize="23sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:layout_marginTop="35dp"/>
 
         <Button
             android:id="@+id/btnAddAsset"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="＋  Add New Asset"
+            android:layout_height="55dp"
+            android:text="+  Add New Asset"
             android:layout_marginTop="15dp"/>
 
         <Button
             android:id="@+id/btnMyAssets"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="My Assets"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="10dp"/>
 
         <Button
-            android:id="@+id/btnViewAssets"
+            android:id="@+id/btnCategories"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View My Assets"
+            android:layout_height="55dp"
+            android:text="Asset Categories"
             android:layout_marginTop="10dp"/>
 
         <Button
             android:id="@+id/btnWarranty"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="Warranty Tracker"
             android:layout_marginTop="10dp"/>
 
@@ -138,8 +142,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Keep your purchases, warranties and receipts organized."
-            android:textSize="14sp"
             android:gravity="center"
+            android:textSize="14sp"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="20dp"/>
 

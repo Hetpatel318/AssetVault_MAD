@@ -1,7 +1,7 @@
 package com.example.mad_assignment
 
 data class Asset(
-    val id: Int,
+    val id: Int = 0,
     val name: String,
     val category: String,
     val brand: String,

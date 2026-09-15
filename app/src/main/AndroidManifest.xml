@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
@@ -24,7 +23,27 @@
             android:exported="false" />
 
         <activity
+            android:name=".AddAssetActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MyAssetsActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".AssetDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".EditAssetActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AssetCategoriesActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".WarrantyActivity"
             android:exported="false" />
 
     </application>
